@@ -1,23 +1,16 @@
-var capture;
-var w = 640;
-var h = 480;
-
 function setup() {
-    capture = createCapture({
-        audio: false,
-        video: {
-            width: w,
-            height: h
-        }
-    }, function() {
-        console.log('capture ready.')
-    });
-    capture.elt.setAttribute('playsinline', '');
-    capture.hide();
-    capture.size(w, h);
-    canvas = createCanvas(w, h);
-}
-
-function draw() {
-    image(capture, 0, 0);
+  createCanvas(480, 120);
+  var constraints = {
+    video: {
+      mandatory: {
+        minWidth: 1280,
+        minHeight: 720
+      },
+      optional: [{ maxFrameRate: 10 }]
+    },
+    audio: true
+  };
+  createCapture(constraints, function(stream) {
+    console.log(stream);
+  });
 }
