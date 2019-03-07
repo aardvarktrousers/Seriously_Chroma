@@ -6,7 +6,7 @@ function setup() {
   canvas.id('p5canvas');
   canvas.position(0, 0);
   
-  video = createCapture(VIDEO);
+  video = createCapture({audio: false, video: { width: 640, height: 480});
   video.elt.setAttribute('playsinline', '');
   video.size(640, 480);
   video.id('p5video');
