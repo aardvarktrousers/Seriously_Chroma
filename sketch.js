@@ -1,4 +1,4 @@
-let capture;
+var capture;
 
 function setup() {
   createCanvas(390, 240);
