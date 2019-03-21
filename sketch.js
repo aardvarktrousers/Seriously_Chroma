@@ -13,7 +13,7 @@ function setup() {
     audio: false,
     video: {
       mandatory: {
-    facingMode: "environment"
+    facingMode: {exact: "environment"}
       }
     }
   };
