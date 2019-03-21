@@ -12,10 +12,10 @@ function setup() {
     var constraints = {
     audio: false,
     video: {
-      mandatory: {
-    facingMode: {exact: "environment"}
-      }
-    }
+      
+    facingMode: "environment"}
+     
+    
   };
   video = navigator.mediaDevices.getUserMedia(constraints);
     
