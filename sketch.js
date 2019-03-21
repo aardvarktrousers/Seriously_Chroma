@@ -17,7 +17,7 @@ function setup() {
       }
     }
   };
-  video = createCapture(constraints);
+  video = navigator.mediaDevices.getUserMedia(constraints);
     
     
     
