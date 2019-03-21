@@ -11,8 +11,11 @@ function setup() {
     
     var constraints = {
     audio: false,
-    video: true,
+    video: {
+      mandatory: {
     facingMode: "environment"
+      }
+    }
   };
   video = createCapture(constraints);
     
