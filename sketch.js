@@ -13,7 +13,7 @@ function setup() {
     audio: false,
     video: {
       
-    facingMode: "environment"}
+    facingMode: "user"}
      
     
   };
