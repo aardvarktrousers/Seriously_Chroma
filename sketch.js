@@ -2,11 +2,22 @@ var video;
 
 
 function setup() {
-  canvas = createCanvas(640, 480, WEBGL);
+  canvas = createCanvas(windowWidth, windowHeight, WEBGL);
+ 
   canvas.id('p5canvas');
   canvas.position(0, 0);
-  
-  video = createCapture(VIDEO);
+ 
+  //video = createCapture(VIDEO);
+    
+    var constraints = {
+    audio: false,
+    video: true,
+    facingMode: "environment"
+  };
+  video = createCapture(constraints);
+    
+    
+    
   video.elt.setAttribute('playsinline', '');
   video.size(640, 480);
   video.id('p5video');
@@ -15,8 +26,8 @@ function setup() {
   var seriously = new Seriously();
   var src = seriously.source('#p5video');
   var target = seriously.target('#p5canvas');
-  target.width = 640;
-  target.height = 480;
+  target.width = windowWidth;
+  target.height = windowHeight;
   
 var chroma = seriously.effect('chroma');
 chroma.source = "#p5video";
